@@ -7,10 +7,13 @@
 </body>
 <script>
   const root = document.getElementById("root");
-  const span = React.createElement(
-          "span",
-          { id: "webtoons-span", style: { color: "red" }},
-          "Hello I am a span");
-  ReactDOM.render(span, root);
+  const h3 = React.createElement("h3", {
+    onMouseEnter: () => console.log('enter')
+  }, "Hello, I am a H3");
+  const button = React.createElement("button", {
+    onClick: () => console.log('click')
+  }, "Click me");
+  const container = React.createElement("div", null, [h3, button]);
+  ReactDOM.render(container, root);
 </script>
 </html>
