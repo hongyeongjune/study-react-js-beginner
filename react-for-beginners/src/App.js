@@ -2,9 +2,19 @@ import styles from './App.module.css';
 import Button from './Button';
 import { useEffect, useState } from 'react';
 
+function Hello() {
+    useEffect(() => {
+        console.log("created");
+        return () => console.log("destoryed");
+    }, []);
+
+    return <h3>Hello</h3>;
+}
+
 function App() {
     const [counter, setCounter] = useState(0);
     const [keyword, setKeyword] = useState("");
+    const [showing, setShowing] = useState(false);
 
     useEffect(() => {
         console.log("I run only once.");
@@ -36,6 +46,10 @@ function App() {
             />
             <h3>{counter}</h3>
             <Button text={"counter up"} setCounter={setCounter} />
+            {
+                showing && <Hello />
+            }
+            <button onClick={() => setShowing(prev => !prev)}>{showing ? "Hide" : "Show"}</button>
         </div>
     );
 }
