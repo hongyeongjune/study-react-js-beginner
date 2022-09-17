@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import Button from './Button';
 import { useEffect, useState } from 'react';
+import TodoList from './TodoList';
 
 function Hello() {
     useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
                 showing && <Hello />
             }
             <button onClick={() => setShowing(prev => !prev)}>{showing ? "Hide" : "Show"}</button>
+            <TodoList />
         </div>
     );
 }
