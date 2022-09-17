@@ -2,6 +2,7 @@ import styles from './App.module.css';
 import Button from './Button';
 import { useEffect, useState } from 'react';
 import TodoList from './TodoList';
+import CoinTracker from './CoinTracker';
 
 function Hello() {
     useEffect(() => {
@@ -52,6 +53,7 @@ function App() {
             }
             <button onClick={() => setShowing(prev => !prev)}>{showing ? "Hide" : "Show"}</button>
             <TodoList />
+            <CoinTracker />
         </div>
     );
 }
