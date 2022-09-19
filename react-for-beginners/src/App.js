@@ -1,8 +1,8 @@
-import TutorialHome from './component/TutorialHome';
+import Home from './route/Home';
 
 function App() {
     return (
-        <TutorialHome />
+        <Home />
     )
 }
 
